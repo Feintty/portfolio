@@ -1,0 +1,40 @@
+.layoutWrapper {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+
+  .layoutStatic {
+    height: 100vh;
+    width: 100vw;
+    background-blend-mode: normal;
+    background-image: url("../../Resources/background.png");
+    background-color: #363636;
+    z-index: 10;
+  }
+
+  .layoutAnimated {
+    height: 180vh;
+    z-index: 1;
+    transform: translate(0, -850px) scale(2, 1);
+    width: 100vw;
+    background: radial-gradient(
+      circle,
+      rgba(150, 39, 39, 1) 0%,
+      rgba(55, 44, 44, 0) 70%
+    );
+    opacity: 40%;
+    animation: 7s ease 1s infinite backgroundShift;
+  }
+}
+
+@keyframes backgroundShift {
+  0% {
+    transform: translate(0, -850px) scale(2, 1);
+  }
+  50% {
+    transform: translate(0, -850px) scale(2, 0.4);
+  }
+  100% {
+    transform: translate(0, -850px) scale(2, 1);
+  }
+}
